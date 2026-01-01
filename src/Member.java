@@ -35,19 +35,39 @@ public class Member {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null && !name.trim().isEmpty()){
+            this.name = name;
+        } else {
+            System.out.println("member name cannot be empty");
+            this.name = "unknown";
+        }
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if (age >= 0){
+            this.age = age;
+        } else {
+            System.out.println("member age cannot be negative");
+            this.age = 0;
+        }
     }
 
     public void setWeight(int weight) {
-        this.weight = weight;
+        if (weight >= 0){
+            this.weight = weight;
+        } else {
+            System.out.println("member weight cannot be negative");
+            this.weight = 0;
+        }
     }
 
     public void setHeight(int height) {
-        this.height = height;
+        if (height >= 0){
+            this.height = height;
+        } else {
+            System.out.println("member height cannot ne negative");
+            this.height = 0;
+        }
     }
 
     public boolean isAdult() {

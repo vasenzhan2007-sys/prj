@@ -35,19 +35,39 @@ public class Trainer {
     }
 
     public void setName(String name){
-        this.name = name;
+        if (name != null && !name.trim().isEmpty()){
+            this.name = name;
+        } else {
+            System.out.println("trainer name cannot be empty");
+            this.name = "unknown";
+        }
     }
 
     public void setAge(int age){
-        this.age = age;
+        if (age >= 0){
+            this.age = age;
+        } else {
+            System.out.println("trainer age cannot be negative");
+            this.age = 0;
+        }
     }
 
     public void setGender(String gender){
-        this.gender = gender;
+        if (gender != null && !gender.trim().isEmpty()){
+            this.gender = gender;
+        } else {
+            System.out.println("trainer gender cannot be empty");
+            this.gender = "unknown";
+        }
     }
 
     public void setExperienceYears(int experienceYears){
-        this.experienceYears = experienceYears;
+        if (experienceYears >= 0){
+            this.experienceYears = experienceYears;
+        } else {
+            System.out.println("trainer experience years cannot be negative");
+            this.experienceYears = 0;
+        }
     }
 
     public boolean isExperienced(){

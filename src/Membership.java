@@ -35,19 +35,39 @@ public class Membership {
     }
 
     public void setMembershipId(int membershipId){
-        this.membershipId = membershipId;
+        if (membershipId >= 0){
+            this.membershipId = membershipId;
+        } else {
+            System.out.println("membership Id cannot be negative");
+            this.membershipId = 0;
+        }
     }
 
     public void setType(String type){
-        this.type = type;
+        if (type != null && !type.trim().isEmpty()){
+            this.type = type;
+        } else {
+            System.out.println("membership type cannot be empty");
+            this.type = "unknown";
+        }
     }
 
     public void setPrice(double price){
-        this.price = price;
+        if (price >= 0){
+            this.price = price;
+        } else {
+            System.out.println("membership price cannot be negative");
+            this.price = 0;
+        }
     }
 
     public void setDurationMonths(int durationMonths){
-        this.durationMonths = durationMonths;
+        if (durationMonths >= 0){
+            this.durationMonths = durationMonths;
+        } else {
+            System.out.println("membership duration cannot be negative");
+            this.durationMonths = 0;
+        }
     }
 
     public boolean isExpensive(){
